@@ -1,0 +1,9 @@
+name: vkpr-install
+static_sites:
+- environment_slug: html
+  github:
+    branch: main
+    deploy_on_push: true
+    repo: vertigobr/vkpr-install
+  name: sample-html
+  index_document: vkpr-install.sh
