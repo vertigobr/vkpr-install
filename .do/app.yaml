@@ -1,14 +1,13 @@
 
 name: vkpr-install
-region: nyc
 static_sites:
 - environment_slug: html
   github:
     branch: main
     deploy_on_push: true
     repo: vertigobr/vkpr-install
-  name: vkpr-install
-  index_document: vkpr-install.sh
+  index_document: "vkpr-install.sh"
   routes:
   - path: /
   source_dir: /
+  name: vkpr-install
