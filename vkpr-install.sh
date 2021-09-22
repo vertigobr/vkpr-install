@@ -11,9 +11,10 @@ rit set formula-runner --runner="local"
 # dev/null to fix OSX error
 rit vkpr init < /dev/null
 echo "--------"
-echo "$(printf '\033[4m')$(printf '\033[1m')$(printf '\033[31m')Caution!$(printf '\033[0m')s"
+echo "$(printf '\033[4m')$(printf '\033[1m')$(printf '\033[31m')Caution!$(printf '\033[0m')"
 echo "--------"
 echo "To use VKPR, you must have Docker installed."
-echo "It is recommended to use aliases to make writing VKPR commands easier, like:\n"
-echo "$(printf '\033[32m')alias$(printf '\033[0m') vkpr=\"rit vkpr\"\n"
+echo "It is recommended to use aliases to make writing VKPR commands easier, like:"
+echo ""
+echo "$(printf '\033[32m')alias$(printf '\033[0m') vkpr=\"rit vkpr\""
 echo ""
