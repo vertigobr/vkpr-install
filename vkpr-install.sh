@@ -6,6 +6,7 @@ if [ $(id -u) -eq 0 ]; then
 else
   curl -fsSL https://commons-repo.ritchiecli.io/install.sh | bash
 fi
+alias vkpr='rit vkpr'
 rit add repo --provider="Github" --name="vkpr-cli" --repoUrl="https://github.com/vertigobr/vkpr-cli"
 rit set formula-runner --runner="local"
 # dev/null to fix OSX error
