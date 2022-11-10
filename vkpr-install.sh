@@ -1,11 +1,32 @@
 #!/bin/sh
+
+rit_identify_os () {
+  if [ $(uname) = "Linux" ]; then
+      echo "Installing Ritchie for Linux"
+      OPERATIONAL_SYSTEM="linux"
+  elif [ $(uname) = "Darwin" ]; then
+      echo "Installing Ritchie for Mac"
+      OPERATIONAL_SYSTEM="darwin"
+  else
+    echo "Unable to identify which OS you're using"
+    exit 1
+  fi
+}
+
+install_rit(){
+  curl -SLO https://commons-repo.ritchiecli.io/2.11.3/${OPERATIONAL_SYSTEM}/rit
+  chmod +x ./rit
+  INSTALL_PATH="/usr/local/bin"
+  if [ ! -d "$INSTALL_PATH" ]; then
+    mkdir -p $INSTALL_PATH
+  fi
+  sudo mv ./rit $INSTALL_PATH/rit
+}
+
 echo "$(printf '\033[1m')$(printf '\033[32m')VKPR install script$(printf '\033[0m')"
 echo "$(printf '\033[1m')===================$(printf '\033[0m')"
-if [ $(id -u) -eq 0 ]; then
-  curl -fsSL https://commons-repo.ritchiecli.io/install.sh | sed -e 's/sudo//g' | bash
-else
-  curl -fsSL https://commons-repo.ritchiecli.io/install.sh | bash
-fi
+rit_identify_os
+install_rit
 rit add repo --provider="Github" --name="vkpr-cli" --repoUrl="https://github.com/vertigobr/vkpr-cli"
 rit set formula-runner --runner="local"
 # dev/null to fix OSX error
