@@ -39,3 +39,16 @@ echo "It is recommended to use aliases to make writing VKPR commands easier, lik
 echo ""
 echo "$(printf '\033[32m')alias$(printf '\033[0m') vkpr=\"rit vkpr\""
 echo ""
+
+install_control () {
+if [$CONTROL_SKIP= true ]; then
+    echo "EXECUÇÃO TESTE"
+else
+ curl --location 'https://api.homolog.platform.vee.codes/platform-metrics/v1/metrics' \
+ --header 'X-Api-Key: 7pLRJUqVgsPYzM3NpVIziHNysi6YoF4oJ5FHCPVN5dvkhFXltTVumDXJyFnNXTDC' \
+ --header 'Content-Type: application/json' \
+ --data '{
+ "command":"install/upgrade/devportal"
+    }'
+fi
+}
