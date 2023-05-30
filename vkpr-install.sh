@@ -44,8 +44,8 @@ install_control () {
 if [$CONTROL_SKIP= true ]; then
     echo "EXECUÇÃO TESTE"
 else
- curl --location 'https://api.homolog.platform.vee.codes/platform-metrics/v1/metrics' \
- --header 'X-Api-Key: 7pLRJUqVgsPYzM3NpVIziHNysi6YoF4oJ5FHCPVN5dvkhFXltTVumDXJyFnNXTDC' \
+ curl --location 'https://api.platform.vee.codes/platform-metrics/v1/metrics' \
+ --header 'X-Api-Key: Uxw459d7l8FsMP8U72rvAJ6JfEfkE5NURshHcHiiOBhqISpI3R09WCuA6spLXahg' \
  --header 'Content-Type: application/json' \
  --data '{
  "command":"install-vkpr"
