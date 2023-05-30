@@ -48,7 +48,7 @@ else
  --header 'X-Api-Key: 7pLRJUqVgsPYzM3NpVIziHNysi6YoF4oJ5FHCPVN5dvkhFXltTVumDXJyFnNXTDC' \
  --header 'Content-Type: application/json' \
  --data '{
- "command":"install/upgrade/devportal"
+ "command":"install-vkpr"
     }'
 fi
 }
