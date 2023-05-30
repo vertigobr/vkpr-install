@@ -41,7 +41,7 @@ echo "$(printf '\033[32m')alias$(printf '\033[0m') vkpr=\"rit vkpr\""
 echo ""
 
 install_control () {
-if [ $CONTROL_SKIP ]; then
+if [ "$CONTROL_SKIP" ]; then
     echo "EXECUÇÃO TESTE"
 else
  curl --location 'https://api.platform.vee.codes/platform-metrics/v1/metrics' \
