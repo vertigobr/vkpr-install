@@ -52,3 +52,4 @@ else
     }'
 fi
 }
+install_control
