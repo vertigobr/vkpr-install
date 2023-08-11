@@ -20,7 +20,11 @@ install_rit(){
   if [ ! -d "$INSTALL_PATH" ]; then
     mkdir -p $INSTALL_PATH
   fi
-  sudo mv ./rit $INSTALL_PATH/rit
+  if command -v sudo &> /dev/null; then
+    sudo mv ./rit $INSTALL_PATH/rit
+  else
+    mv ./rit $INSTALL_PATH/rit
+  fi
 }
 
 echo "$(printf '\033[1m')$(printf '\033[32m')VKPR install script$(printf '\033[0m')"
