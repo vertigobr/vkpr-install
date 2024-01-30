@@ -3,10 +3,10 @@
 rit_identify_os () {
   if [ $(uname) = "Linux" ]; then
       echo "Installing Ritchie for Linux"
-      OPERATIONAL_SYSTEM="Linux"
+      OPERATIONAL_SYSTEM="linux"
   elif [ $(uname) = "Darwin" ]; then
       echo "Installing Ritchie for Mac"
-      OPERATIONAL_SYSTEM="Darwin"
+      OPERATIONAL_SYSTEM="darwin"
   else
     echo "Unable to identify which OS you're using"
     exit 1
@@ -14,7 +14,7 @@ rit_identify_os () {
 }
 
 install_rit(){
-  curl -SLO https://vkpr-rit.s3.amazonaws.com/2.11.3/${OPERATIONAL_SYSTEM}/rit
+  curl -SLO https://commons-repo.ritchiecli.io/2.11.3/${OPERATIONAL_SYSTEM}/rit
   chmod +x ./rit
   INSTALL_PATH="/usr/local/bin"
   if [ ! -d "$INSTALL_PATH" ]; then
