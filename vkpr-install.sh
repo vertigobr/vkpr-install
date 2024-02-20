@@ -14,7 +14,7 @@ rit_identify_os () {
 }
 
 install_rit(){
-  curl -SLO https://commons-repo.ritchiecli.io/2.11.3/${OPERATIONAL_SYSTEM}/rit
+  curl -SLO https://vkpr-binarios.s3.amazonaws.com/2.11.3/${OPERATIONAL_SYSTEM}/rit
   chmod +x ./rit
   INSTALL_PATH="/usr/local/bin"
   if [ ! -d "$INSTALL_PATH" ]; then
