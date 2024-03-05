@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 rit_identify_os () {
   if [ $(uname) = "Linux" ]; then
